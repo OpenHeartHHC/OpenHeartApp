@@ -24,6 +24,16 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 })
+  .controller("IntroController", function($scope, $timeout, $state) {
+    $timeout(function() {
+      $state.go("tab.dash");
+    }, 5000);
+
+    $scope.go = function() {
+      $state.go("tab.dash");
+    };
+
+  })
 
   .controller("ExampleController", function($scope, $timeout) {
   });

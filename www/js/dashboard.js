@@ -67,7 +67,7 @@ angular.module('starter.controllers')
           $scope.pulseDisplay.bgcol = "";
           $scope.pulseDisplay.fgcol = "";
           $scope.pulseDisplay.weigth = "";
-          $scope.pulseDisplay.pulseFgCol = "black";
+          $scope.pulseDisplay.pulseFgCol = "#080";
           $scope.pulseDisplay.message = "Your pulse is normal";
         }
         $scope.$digest();

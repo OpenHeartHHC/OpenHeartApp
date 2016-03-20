@@ -31,7 +31,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
+    .state('intro', {
+      url: '/intro',
+      controller: "IntroController",
+      templateUrl: 'templates/intro.html'
+    })
+
+
+    // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -91,6 +98,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/intro');
 
 });
