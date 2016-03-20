@@ -76,6 +76,7 @@ angular.module('starter.controllers')
         ActivitiesProvider.update($scope.editedActivity);
         //$scope.data[$scope.activeIndex] = angular.copy($scope.editedActivity);
       }
+      $scope.data = ActivitiesProvider.get();
       $scope.state = "list";
     };
 
