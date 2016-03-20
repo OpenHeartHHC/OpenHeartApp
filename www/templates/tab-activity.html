@@ -87,16 +87,14 @@
 
   <ion-footer-bar ng-show="state == 'edit' " align-title="left" class="bar">
     <div class="buttons">
-      <a class="button" ng-click="saveEdited()">
-        <i class="icon ion-plus"></i>
-        Save
+      <a class="button button-assertive icon-left icon ion-trash-a" ng-click="removeEdited()">
+        Delete
       </a>
     </div>
     <h1 class="title"></h1>
     <div class="buttons">
-      <a class="button" ng-click="removeEdited()">
-        <i class="icon ion-trash-a"></i>
-        Delete
+      <a class="button button-positive icon-left ion-plus" ng-click="saveEdited()">
+        Save
       </a>
     </div>
   </ion-footer-bar>

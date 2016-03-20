@@ -65,6 +65,9 @@ angular.module('starter.controllers')
     };
 
     $scope.saveEdited = function(){
+      if (!$scope.editedActivity.name) {
+        $scope.editedActivity.name = "Unnamed Exercise";
+      }
       if ($scope.editedActivity.id == undefined) {
         $scope.editedActivity.id = ActivitiesProvider.getNewId();
         ActivitiesProvider.add($scope.editedActivity);
