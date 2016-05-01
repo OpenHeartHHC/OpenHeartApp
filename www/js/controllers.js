@@ -1,40 +1,46 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.services'])
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
+.controller("IntroController", function($scope, $state, $ionicPopup, authService)
+{
+	//authService.ClearCredentials();
+	$scope.data = {};
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
+	/*$scope.$on('event:authFailed', function(e, status)
+	{
+		var alertPopup = $ionicPopup.alert(
+		{
+			title: 'Connection to Open-Heart failed',
+			template: 'Are you already registered? If yes, please check your credentials.'
+		});
+	});
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-})
-  .controller("IntroController", function($scope, $timeout, $state) {
-    $timeout(function() {
-      $state.go("tab.dash");
-    }, 5000);
+	$scope.$on('event:authSucceed', function(e, status)
+	{
+		$state.go('tab.dash');
+	});*/
 
-    $scope.go = function() {
-      $state.go("tab.dash");
-    };
 
-  })
+	$scope.login = function()
+	{
+		//window.authService.SemaLogin();
 
-  .controller("ExampleController", function($scope, $timeout) {
-  });
+		if(angular.isUndefined($scope.data.username) || angular.isUndefined($scope.data.password) ||
+			$scope.data.username === '' || $scope.data.password === '')
+		{
+			var alertPopup = $ionicPopup.alert(
+			{
+				title: 'Missing information',
+				template: 'Are you already registered? If yes, please fill all your credentials.'
+			});
+		}
+		else
+		{
+			console.log("Got user=" + $scope.data.username + " and pass=" + $scope.data.password)
+
+			$scope.result = authService.SemaLogin($scope.data.username, $scope.data.password);
+		}
+	}
+});
+
 ;

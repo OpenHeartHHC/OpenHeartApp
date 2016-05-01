@@ -1,10 +1,26 @@
 <ion-view>
-  <ion-content class="padding">
+	<ion-content class="padding">
 
-    <div style="margin-top: 64px; text-align: center;" ng-click="go()">
-      <img src="img/openheart_2.png" style="max-width: 80%; max-height: 400px;">
-      <h2 style="padding-top: 0px; margin-top: 0px;">Open-Heart</h2>
-    </div>
+		<div style="margin-top: 64px; text-align: center;" ng-click="go()">
+			<img src="img/openheart_2.png" style="max-width: 80%; max-height: 400px;"> </img>
+			<h2 style="padding-top: 0px; margin-top: 0px;">Open-Heart</h2>
+			<h4 style="padding-top: 0px; margin-top: 0px;">Your cardiac rehabilitation coach</h4>
+		</div>
 
-  </ion-content>
+		<div class="list list-inset">
+			<label class="item item-input">
+				<span class="input-label">Username</span>
+				<input type="text" placeholder="e.g. j_doe" ng-model="data.username"> </input>
+			</label>
+
+			<label class="item item-input">
+				<span class="input-label">Password</span>
+				<input type="password" placeholder="e.g. MyPassWd456321" ng-model="data.password"> </input>
+			</label>
+		</div>
+		
+		<button class="button button-block button-calm" ng-click="login()">Login to your account</button>
+		<button class="button button-block button-calm" ng-click="createAccount()">Create a new account!</button>
+
+	</ion-content>
 </ion-view>
