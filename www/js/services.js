@@ -6,9 +6,9 @@ angular.module('starter.services', ['ngResource'])
 	var service = {};
 
 	// Attempts to login to remote server
-	service.Login = function (user, pwd, callback)
+	service.Login = function (user, pwd)
 	{
-		console.log("Yay!!!")
+		console.log("Authentication!!!")
 		var service = {};
 	};
 });
