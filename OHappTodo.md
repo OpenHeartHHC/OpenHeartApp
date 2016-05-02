@@ -1,0 +1,6 @@
+- [] Merge "Activity" and "Status" 
+- [] Allow for other health data logging (weight, bloof pressure, ...)
+- [] Make a login (and logout) system with user profile
+- [] Allow for heath history export
+- [] Multi-language support
+- [] "About" tab
