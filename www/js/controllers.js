@@ -51,8 +51,20 @@ angular.module('starter.controllers', ['starter.services'])
 	}
 })
 
-.controller("newUserCtrl", function($scope, $state)//, authService)
+.controller("newUserCtrl", function($scope, $state, $ionicPopup)//, authService)
 {
 	console.log("New user...")
+
+	$scope.registerUser = function()
+	{
+		console.log("New user registered!")
+		var alertPopup = $ionicPopup.alert(
+		{
+			title: 'Welcome to Open-Heart!',
+			template: 'You are now successfully registered to Open-Heart. Enjoy your journey!'
+		});
+		
+		$state.go('tab.dash');
+	}
 });
 ;
