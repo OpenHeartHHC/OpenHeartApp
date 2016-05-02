@@ -1,7 +1,7 @@
 angular.module('starter.controllers', ['starter.services'])
 
 
-.controller("IntroController", function($scope, $state, $ionicPopup, authService)
+.controller("IntroCtrl", function($scope, $state, $ionicPopup)//, authService)
 {
 	//authService.ClearCredentials();
 	$scope.data = {};
@@ -20,6 +20,8 @@ angular.module('starter.controllers', ['starter.services'])
 		$state.go('tab.dash');
 	});*/
 
+	console.log("Introduction controller")
+
 
 	$scope.login = function()
 	{
@@ -37,10 +39,20 @@ angular.module('starter.controllers', ['starter.services'])
 		else
 		{
 			console.log("Got user=" + $scope.data.username + " and pass=" + $scope.data.password)
-
-			$scope.result = authService.SemaLogin($scope.data.username, $scope.data.password);
+			$state.go('tab.dash');
+			//$scope.result = authService.Login($scope.data.username, $scope.data.password);
 		}
 	}
-});
 
+	$scope.createAccount = function()
+	{
+		console.log("Create new account!!!")
+		$state.go('newUser');
+	}
+})
+
+.controller("newUserCtrl", function($scope, $state)//, authService)
+{
+	console.log("New user...")
+});
 ;

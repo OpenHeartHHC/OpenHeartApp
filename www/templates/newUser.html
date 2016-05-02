@@ -1,0 +1,41 @@
+<ion-view view-title="Search for interventions" name="search-view">
+  <ion-content class="padding">
+
+	<div class="list list-inset">
+		<h3>Search filters :</h3>
+		<label class="item item-input">
+			<span class="input-label">Patient ID</span>
+			<input type="number" placeholder="e.g. 123456789" ng-model="data.patientID"> </input>
+		</label>
+
+		<label class="item item-input">
+			<span class="input-label">Patient name</span>
+			<input type="text" placeholder="e.g. John Doe" ng-model="data.patientName"> </input>
+		</label>
+
+		<label class="item item-input">
+			<span class="input-label">Intervention ID</span>
+			<input type="number" placeholder="e.g. 123456789" ng-model="data.interventionID"> </input>
+		</label>
+
+		<label class="item item-input">
+			<span class="input-label">Intervention date</span>
+			<input type="date" placeholder="e.g. 11.03.2016" ng-model="data.interventionDate"> </input>
+		</label>
+	</div>
+
+	<div class="list list-inset">
+		<h3>Sort by :</h3>
+
+		<ion-list>
+			<ion-radio ng-model="data.sortChoice" ng-value="'A'">Patient ID</ion-radio>
+			<ion-radio ng-model="data.sortChoice" ng-value="'B'">Patient name</ion-radio>
+			<ion-radio ng-model="data.sortChoice" ng-value="'C'">Intervention ID</ion-radio>
+			<ion-radio ng-model="data.sortChoice" ng-value="'D'">Intervention date</ion-radio>
+		</ion-list>
+	</div>
+			
+	<button class="button button-block button-calm" ng-click="search()">Search {{data.result}}</button>
+	
+	</ion-content>
+</ion-view>
