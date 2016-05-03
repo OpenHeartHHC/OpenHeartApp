@@ -1,12 +1,23 @@
 angular.module('starter.controllers', ['starter.services'])
 
 
-.controller("IntroCtrl", function($scope, $state, $ionicPopup, authService, usersService)
+.controller("IntroCtrl", function($scope, $state, $timeout)
 {
 	//authService.ClearCredentials();
-	$scope.data = {};
+	//$scope.data = {};
 
-	$scope.users = usersService.getAll();
+	console.log("Introduction controller")
+
+	// Stay 5sec showing the logo
+	$timeout(function()
+	{
+		$state.go("login");
+	}, 5000);
+
+	$scope.go = function()
+	{
+		$state.go("login");
+	};
 
 	/*$scope.$on('event:authFailed', function(e, status)
 	{
@@ -21,15 +32,12 @@ angular.module('starter.controllers', ['starter.services'])
 	{
 		$state.go('tab.dash');
 	});*/
-
-	console.log("Introduction controller")
+	
+	/*
 	$scope.data.remember = true
-
 
 	$scope.login = function()
 	{
-		//window.authService.SemaLogin();
-
 		if(angular.isUndefined($scope.data.username) || angular.isUndefined($scope.data.password) ||
 			$scope.data.username === '' || $scope.data.password === '')
 		{
@@ -50,8 +58,8 @@ angular.module('starter.controllers', ['starter.services'])
 			{
 				if($scope.data.remember == true)
 				{
-					window.localStorage.setItem("username", $scope.data.username);
-					window.localStorage.setItem("password", $scope.data.password);
+					//window.localStorage.setItem("username", $scope.data.username);
+					//window.localStorage.setItem("password", $scope.data.password);
 				}
 				
 				$state.go('tab.dash');
@@ -71,13 +79,25 @@ angular.module('starter.controllers', ['starter.services'])
 	{
 		console.log("Create new account!!!")
 		$state.go('newUser');
+	}*/
+})
+
+.controller("LoginCtrl", function($scope, $state, $ionicPopup, usersService)
+{
+	$scope.users = usersService.getAll();
+
+	console.log("Login!!!")
+
+	$scope.createAccount = function()
+	{
+		console.log("Create new account!!!")
+		$state.go('newUser');
 	}
 })
 
 .controller("newUserCtrl", function($scope, $state, $ionicPopup)//, authService)
 {
-	console.log("New user..." + window.localStorage.getItem("username"))
-
+	//console.log("New user..." + window.localStorage.getItem("username"))
 
 	$scope.data = {};
 
@@ -96,8 +116,8 @@ angular.module('starter.controllers', ['starter.services'])
 		{
 			console.log("New user registered!")
 
-			window.localStorage.setItem("username", $scope.data.username);
-			window.localStorage.setItem("password", $scope.data.password);
+			//window.localStorage.setItem("username", $scope.data.username);
+			//window.localStorage.setItem("password", $scope.data.password);
 
 			var alertPopup = $ionicPopup.alert(
 			{

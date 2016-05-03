@@ -1,10 +1,24 @@
-<ion-view view-title="Login" name="intro-view">
+<ion-view view-title="Login" name="login-view">
 	<ion-content class="padding">
 
-		<div style="margin-top: 64px; text-align: center;" ng-click="go()">
-			<img src="img/openheart_1.png" style="max-width: 40%; max-height: 400px;"> </img>
-			<h3 style="padding-top: 0px; margin-top: 0px;">Open-Heart</h3>
-			<h4 style="padding-top: 0px; margin-top: 0px;">Your cardiac rehabilitation coach</h4>
+		<div style="margin-top: 64px; text-align: center;">
+			<h3 style="padding-top: 0px; margin-top: 0px;">Select an account</h3>
+		</div>
+
+		<ion-list>
+			<ion-item ng-repeat="user in users" type="item-text-wrap">
+				<center>
+					<img src="img/{{user.photo}}" style="max-width: 40%; max-height: 50px;"> </img>
+					<h2>{{user.name}}</h2>
+					<!-- <p>{{user.photo}}</p> -->
+				</center>
+			</ion-item>
+		</ion-list>
+
+		<div class="list list-inset">
+			<center>
+				<button class="button icon icon-left ion-person-add button-positive" ng-click="createAccount()">Create a new account!</button>
+			</center>
 		</div>
 
 		<!--
