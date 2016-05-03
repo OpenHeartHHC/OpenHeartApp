@@ -1,7 +1,13 @@
 angular.module('starter.controllers')
-  .controller('ActivityCtrl', function($scope, $state, SignalProvider, ActivitiesProvider, $timeout) {
 
-    $scope.state = 'list';
+.controller('ActivityCtrl', function($scope, $state, $timeout)
+{
+
+  console.log("Activity...")
+
+});
+;
+    /*$scope.state = 'list';
 
     $scope.data = ActivitiesProvider.get();
     console.log("Data", $scope.data);
@@ -132,5 +138,6 @@ angular.module('starter.controllers')
       $timeout(chronoRunner, 200);
     };
 
-  })
+  });
 ;
+*/

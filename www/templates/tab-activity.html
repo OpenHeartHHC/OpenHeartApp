@@ -1,8 +1,23 @@
 <ion-view view-title="Activity">
   <ion-content>
 
-    <!--  LIST -->
+  <div class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="e.g. j_doe" ng-model="data.username"> </input>
+      </label>
 
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="e.g. MyPassWd456321" ng-model="data.password"> </input>
+      </label>
+
+      <ion-checkbox ng-model="data.remember" ng-checked="data.remember">Remember me</ion-checkbox>
+    </div>
+
+    </ion-content>
+
+<!--
     <div ng-show="state == 'list' ">
       <div class="list card">
         <div ng-repeat="entry in data">
@@ -15,8 +30,8 @@
         </div>
       </div>
     </div>
+    </ion-content>
 
-    <!--  EDITOR -->
 
     <div ng-show=" state == 'edit' " class="list">
       <label class="item item-input item-stacked-label">
@@ -44,7 +59,7 @@
     </div>
   </ion-content>
 
-    <!--  CHRONO -->
+  
   <ion-content ng-show="state == 'chrono' ">
 
   <div ng-show="state == 'chrono' ">
@@ -98,6 +113,8 @@
       </a>
     </div>
   </ion-footer-bar>
+
+-->
 
 
 </ion-view>

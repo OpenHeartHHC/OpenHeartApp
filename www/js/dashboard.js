@@ -1,6 +1,11 @@
 angular.module('starter.controllers')
 
-  .controller('DashCtrl', function($scope, SignalProvider) {
+  .controller('DashCtrl', function($scope, SignalProvider)
+  {
+    $warningThresh = 75
+    $alarmThresh = 90
+
+
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
     $scope.series = ['Series A', 'Series B'];
     $scope.data = [
@@ -50,14 +55,14 @@ angular.module('starter.controllers')
         console.log("pulse", data);
         addData(data.pulse);
 
-        if (data.pulse > 90) {
+        if (data.pulse > $alarmThresh) {
           $scope.pulseDisplay.bgcol = "red";
           $scope.pulseDisplay.fgcol = "white";
           $scope.pulseDisplay.weigth = "bold";
           $scope.pulseDisplay.pulseFgCol = "red";
           $scope.pulseDisplay.message = "Your pulse is too high!";
 
-        } else if (data.pulse > 80) {
+        } else if (data.pulse > $warningThresh) {
           $scope.pulseDisplay.bgcol = "orange";
           $scope.pulseDisplay.fgcol = "white";
           $scope.pulseDisplay.weigth = "";
@@ -120,7 +125,7 @@ angular.module('starter.controllers')
         max: 120,
 
         plotLines: [{
-          value: 80,
+          value: $warningThresh,
           color: 'orange',
           dashStyle: 'shortdash',
           width: 2,
@@ -128,7 +133,7 @@ angular.module('starter.controllers')
             text: "Seuil de vigilance"
           }
         }, {
-          value: 95,
+          value: $alarmThresh,
           color: 'red',
           dashStyle: 'shortdash',
           width: 2,
@@ -151,7 +156,7 @@ angular.module('starter.controllers')
         enabled: false
       },
       series: [{
-        name: 'Random data',
+        name: 'Heart rate data',
         data: (function () {
           var data = [],
             time = (new Date()).getTime(),

@@ -1,12 +1,26 @@
-<ion-view>
+<ion-view view-title="Login" name="intro-view">
 	<ion-content class="padding">
 
 		<div style="margin-top: 64px; text-align: center;" ng-click="go()">
-			<img src="img/openheart_1.png" style="max-width: 50%; max-height: 400px;"> </img>
-			<h2 style="padding-top: 0px; margin-top: 0px;">Open-Heart</h2>
+			<img src="img/openheart_1.png" style="max-width: 40%; max-height: 400px;"> </img>
+			<h3 style="padding-top: 0px; margin-top: 0px;">Open-Heart</h3>
 			<h4 style="padding-top: 0px; margin-top: 0px;">Your cardiac rehabilitation coach</h4>
 		</div>
 
+		<ion-list>
+			<ion-item ng-repeat="user in users" type="item-text-wrap">
+				<h3>{{user.name}}</h3>
+				<p>{{user.photo}}</p>
+			</ion-item>
+		</ion-list>
+
+		<div class="list list-inset">
+			<center>
+				<button class="button icon icon-left ion-person-add button-positive" ng-click="createAccount()">Create a new account!</button>
+			</center>
+		</div>
+
+		<!--
 		<div class="list list-inset">
 			<label class="item item-input">
 				<span class="input-label">Username</span>
@@ -18,11 +32,12 @@
 				<input type="password" placeholder="e.g. MyPassWd456321" ng-model="data.password"> </input>
 			</label>
 
-			<ion-checkbox ng-model="isChecked" ng-checked="item.checked">Remember me</ion-checkbox>
+			<ion-checkbox ng-model="data.remember" ng-checked="data.remember">Remember me</ion-checkbox>
 		</div>
 		
 		<button class="button icon icon-left ion-log-in button-calm" ng-click="login()">Login to your account</button>
 		<button class="button icon icon-left ion-person-add button-positive" ng-click="createAccount()">Create a new account!</button>
+	-->
 
 		<!--<button class="button button-block button-calm" ng-click="login()">Login to your account</button>-->
 		<!--<button class="button button-block button-calm" ng-click="createAccount()">Create a new account!</button>-->
