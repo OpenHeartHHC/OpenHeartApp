@@ -1,5 +1,6 @@
 angular.module('starter.controllers')
-  .directive('chronoTime', function() {
+
+.directive('chronoTime', function() {
     return {
       restrict: 'E',
       template: '<div>' +
