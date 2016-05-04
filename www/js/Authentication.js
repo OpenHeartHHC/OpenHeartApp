@@ -24,9 +24,9 @@ angular.module('starter.services')
 
 	// Some fake testing data
 	var users = [
-		{ id: 0, name: 'Julien', photo: 'jul.jpg' },
-		{ id: 1, name: 'Maryna', photo: 'mary.png' },
-		{ id: 2, name: 'Gerard', photo: 'default-user.png' },
+		{ id: 0, name: 'Julien', photo: 'jul.png', pass: 'loljul' },
+		{ id: 1, name: 'Maryna', photo: 'mary.png', pass: 'lolmary' },
+		{ id: 2, name: 'Gerard', photo: 'default-user.png', pass: 'lolgerard' },
 	];
 
 	var service = {
