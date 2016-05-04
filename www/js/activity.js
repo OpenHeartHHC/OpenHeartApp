@@ -1,12 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('ActivityCtrl', function($scope, $state, $timeout)
-{
 
-  console.log("Activity...")
-
-});
-;
     /*$scope.state = 'list';
 
     $scope.data = ActivitiesProvider.get();

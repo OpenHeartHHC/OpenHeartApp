@@ -90,8 +90,34 @@ angular.module('starter.controllers', ['starter.services'])
 
 	$scope.createAccount = function()
 	{
-		console.log("Create new account!!!")
 		$state.go('newUser');
+	}
+
+	$scope.removeUser = function($id, $user)
+	{
+		var confirmPopup = $ionicPopup.confirm(
+		{
+			title: 'Are you sure?',
+			template: "<center>Are you sure you want to remove " + $user + "\'s account?</center>"
+		});
+
+		confirmPopup.then(function(res)
+		{
+			if(res)
+			{
+				console.log('You are sure');
+			} else
+			{
+				console.log('You are not sure');
+			}
+		});
+	}
+
+	$scope.logWithAccount = function($id)
+	{
+		console.log("Log with account " + $id)
+		//window.localStorage.setItem("currUser", $id);
+		$state.go('tab.activity');
 	}
 })
 
@@ -127,6 +153,26 @@ angular.module('starter.controllers', ['starter.services'])
 			
 			$state.go('tab.dash');
 		}
+	}
+})
+
+.controller('ActivityCtrl',function($scope, $state)
+{
+	console.log("Activity...")
+
+	$scope.libertyMode = function()
+	{
+		console.log("Liberty Mode!")
+	}
+
+	$scope.programMode = function()
+	{
+		console.log("Program Mode!")
+	}
+
+	$scope.historyMode = function()
+	{
+		console.log("History Mode!")
 	}
 });
 ;
