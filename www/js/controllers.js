@@ -151,7 +151,7 @@ angular.module('starter.controllers', ['starter.services'])
 				template: '<center>You are now successfully registered to Open-Heart. Enjoy your journey!</center>'
 			});
 			
-			$state.go('tab.dash');
+			$state.go('tab.activity');
 		}
 	}
 })
@@ -163,6 +163,7 @@ angular.module('starter.controllers', ['starter.services'])
 	$scope.libertyMode = function()
 	{
 		console.log("Liberty Mode!")
+		$state.go('tab.dash');
 	}
 
 	$scope.programMode = function()

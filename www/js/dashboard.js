@@ -130,7 +130,7 @@ angular.module('starter.controllers')
           dashStyle: 'shortdash',
           width: 2,
           label: {
-            text: "Seuil de vigilance"
+            text: "Warning threshold"
           }
         }, {
           value: $alarmThresh,
@@ -138,7 +138,7 @@ angular.module('starter.controllers')
           dashStyle: 'shortdash',
           width: 2,
           label: {
-            text: "Seuil d'alerte"
+            text: "Alarm threshold"
           }
         }]
       },
