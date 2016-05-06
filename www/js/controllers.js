@@ -163,7 +163,7 @@ angular.module('starter.controllers', ['starter.services'])
 	$scope.libertyMode = function()
 	{
 		console.log("Liberty Mode!")
-		$state.go('tab.dash');
+		$state.go('liberty');
 	}
 
 	$scope.programMode = function()
@@ -174,6 +174,7 @@ angular.module('starter.controllers', ['starter.services'])
 	$scope.historyMode = function()
 	{
 		console.log("History Mode!")
+		$state.go('history');
 	}
 });
 ;

@@ -50,6 +50,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl: 'templates/newUser.html'
     })
 
+    .state('history', {
+    url: '/history',
+    templateUrl: 'templates/history.html',
+    controller: 'HistoryCtrl'
+    })
+
+    .state('liberty', {
+    url: '/liberty',
+    templateUrl: 'templates/libertyMode.html',
+    controller: 'LibertyCtrl'
+    })
+
     // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
@@ -58,16 +70,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
 
   .state('tab.activity', {
       url: '/activity',
@@ -85,16 +87,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'SettingsCtrl'
-      }
-    }
-  })
-
-  .state('tab.history', {
-    url: '/history',
-    views: {
-      'tab-history': {
-        templateUrl: 'templates/tab-history.html',
-        controller: 'HistoryCtrl'
       }
     }
   })
