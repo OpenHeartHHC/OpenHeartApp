@@ -23,7 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider)
+{
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -48,8 +49,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: "newUserCtrl",
       templateUrl: 'templates/newUser.html'
     })
-
-
 
     // setup an abstract state for the tabs directive
     .state('tab', {
